@@ -1,0 +1,22 @@
+<%- contentFor('body') %>
+
+<h1>Products!</h1>
+
+<div class="row">
+
+    <% for (product of products){%>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="width:200px;" src="<%= product.image %>" alt="Card image <%= product.name %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= product.name %></h5>
+                <p class="card-text"><%= product.description %></p>
+                <p class="card-text">R$ <%= product.price %></p>
+                <a href="#<%= product.id %>" class="btn btn-primary">Buy item</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"><%= product.stock %> product(s) in stock</small>
+              </div>
+        </div>
+
+    <% } %>
+</div>
